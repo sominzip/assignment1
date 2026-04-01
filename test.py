@@ -214,7 +214,7 @@ def run(dataset):
     evaluate(model, test_loader)
 
     # =========================
-    # 파라미터 분기
+    # setting parameters
     # =========================
     if dataset == "mnist":
         fgsm_eps = 0.2
@@ -256,7 +256,7 @@ def run(dataset):
                                       k=pgd_k), True))
 
     # =========================
-    # 이미지 저장
+    # save images
     # =========================
     save_images(model,test_loader,
                 lambda m,x,y: fgsm_untargeted(m,x,y,fgsm_eps),
